@@ -61,7 +61,8 @@ class Head extends \PhpGedcom\Parser\Component
                     $head->setSubm($parser->normalizeIdentifier($record[2]));
                     break;
                 case 'SUBN':
-                    $head->setSubn($parser->normalizeIdentifier($record[2]));
+                    $subn = is_countable($record) && count($record) > 2 ? $record[2] : '';
+                    $head->setSubn($parser->normalizeIdentifier($subn));
                     break;
                 case 'DEST':
                     $head->setDest(trim($record[2]));
