@@ -30,8 +30,10 @@ class Name extends \PhpGedcom\Parser\Component
         $record = $parser->getCurrentLineRecord();
         $depth = (int)$record[0];
 
+        $indiName = is_countable($record) && count($record) > 2 ? $record[2] : '';
+
         $name = new \PhpGedcom\Record\Indi\Name();
-        $name->setName(trim($record[2]));
+        $name->setName(trim($indiName));
 
         $parser->forward();
 
