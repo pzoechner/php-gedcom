@@ -26,7 +26,8 @@ class Name extends \PhpGedcom\Record implements \PhpGedcom\Record\Sourceable
     protected $_spfx = null;
     protected $_surn = null;
     protected $_nsfx = null;
-    
+    protected $_marnm = null;
+
     /**
      *
      */

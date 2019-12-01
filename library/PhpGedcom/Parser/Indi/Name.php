@@ -66,6 +66,9 @@ class Name extends \PhpGedcom\Parser\Component
                 case 'NSFX':
                     $name->setNsfx(trim($record[2]));
                     break;
+                case '_MARNM':
+                    $name->setMarnm(trim($record[2]));
+                    break;
                 case 'SOUR':
                     $sour = \PhpGedcom\Parser\SourRef::parse($parser);
                     $name->addSour($sour);
