@@ -32,7 +32,7 @@ class SourRef extends \PhpGedcom\Parser\Component
         $depth = (int) $record[0];
 
         $sour = new \PhpGedcom\Record\SourRef();
-        $sour->setSour($record[2]);
+        $sour->setSour(count($record) > 2 ? $record[2] : '');
 
         $parser->forward();
 
